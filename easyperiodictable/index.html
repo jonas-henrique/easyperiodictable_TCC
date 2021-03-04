@@ -1,0 +1,2087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EasyPeriodicTable</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+   <!--  esse abaixo é a formatação das cores da tabela -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+  
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/imagens.css" rel='stylesheet'>
+
+
+  </head>
+
+  <body id="page-top">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+      $(".scrc").mouseover(function(){
+          var informacao = $(this).attr("info");
+          $("#informacao").html(informacao);
+          $(this).children("a").children("span").css({"display":"block","position":"absolute", "top": "0px", "left":" 47%", "border":"1px #CCCCCC solid","border":" none", "z-index":"-1" });
+          
+      
+  });
+
+    $(".scrc").mouseout(function(){
+      //colocar no html("")
+        $("#informacao").html("  <div style='color:black;'> <b style='border:2px solid black; font-size: 18px;'>S</b><b style='color:white;'>_</b><b>Sólido</b></div><div style='color:rgb(0, 0, 221);'> <b style='border:2px solid blue; font-size: 18px;''>Hg</b><b style='color:white;'>_</b><b>Líquido</b></div>  <div style='color:#B40431;'><b style='border:2px solid red; font-size: 18px;'>H</b><b style='color:white;'>_</b><b>Gasoso</b></div> <div style='color:#585858;'><b style='border:2px solid #585858; font-size: 18px;'>Pu</b><b style='color:white;'>_</b><b>Desconhecido</b></div>");
+        $(this).children("a").children("span").css({"display":"none"});
+    });
+  });
+  </script>
+  <script >
+    $(this).ready(
+        function(){
+          $(".clickEle").click(
+            function(){
+                id_elemento = $(this).attr('id_elemento');
+                console.log(id_elemento);
+            var request = $.ajax({
+              url: id_elemento + '.html'
+            });
+            request.done(function(data){
+              $('#conteudoModal').html(data);
+
+            });
+            request.fail(function(){
+              console.log("Erro ocorrido!");
+            });
+            $('#myModal').modal();
+            });
+        });
+
+  </script>
+  <script>
+    $(this).ready(
+        function(){
+          $(".clickTable").click(
+            function(){
+                sobreTabela = $(this).attr('sobreTabela');
+                console.log(sobreTabela)
+            var request = $.ajax({
+              url: sobreTabela + '.html'
+            });
+            request.done(function(data){
+              $('#conteudoM').html(data)
+
+            });
+            request.fail(function(){
+              console.log("Erro ocorrido!");
+            });
+            $('#modaltable').modal();
+            });
+        });
+
+  </script>
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+      <a class="navbar-brand mr-1" href="index.html">TABELA</a>
+
+    </nav>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <ul class="sidebar navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>INÍCIO</b>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="sobreTabela.html" >
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>HISTÓRIA</b>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="404.html" >
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>PROPRIEDADES PERIÓDICAS</b>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="quiz.html" >
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>QUIZ</b>
+          </a>
+        </li>
+
+      </ul>
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">TABELA</a>
+            </li>
+            <li class="breadcrumb-item active">TABELA</li>
+          </ol>
+
+
+        </div>
+        <!-- /.container-fluid -->
+        <div>
+
+          <center>
+           
+          <table>
+      <tr>
+        <td></td>
+        <td>1A</td>
+        <td>2A</td>
+        <td>3B</td>
+        <td>4B</td>
+        <td>5B</td>
+        <td>6B</td>
+        <td>7B</td>
+        <td>8B</td>
+        <td>8B</td>
+        <td>8B</td>
+        <td>1B</td>
+        <td>2B</td>
+        <td>3A</td>
+        <td>4A</td>
+        <td>5A</td>
+        <td>6A</td>
+        <td>7A</td>
+        <td>8A</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td class ="verde scrc" info="Hidrogênio: 
+                        Símbolo_=_H; 
+                        Nº_Atômico_=_1; 
+                        Massa_Atômica_=_1.008; 
+                        Configuração_Eletrônica_=_1s¹;" ac='1.html' >
+         <a href="#" class='clickEle' id_elemento='1'>
+                <span><img src="./imagens/1.jpg" teste="te" class='img1'></img></span>
+            <b><big>
+              <strong>1</strong>
+              <b><acronym class="colorgas">H</acronym></b>
+              <em>Hidrogenio</em>
+              <i>1,008</i>
+            </big></b>
+          </a>
+
+        </td>
+        <td class="branco"></td>
+      
+        <td class="branco1" colspan="10" rowspan="3"><div id="informacao">
+            <div style='color:black;'> <b style="border:2px solid black; font-size: 18px;">S</b><b style="color:white;">_</b><b>Sólido</b></div>
+
+            <div style='color:rgb(0, 0, 221);'> <b style="border:2px solid blue; font-size: 18px;">Hg</b><b style="color:white;">_</b><b>Líquido</b></div>
+
+            <div style='color:#B40431;'><b style="border:2px solid red; font-size: 18px;">H</b><b style="color:white;">_</b><b>Gasoso</b></div>
+
+            <div style='color:#585858;'><b style="border:2px solid #585858; font-size: 18px;">Pu</b><b style="color:white;">_</b><b>Desconhecido</b></div>
+          </td>
+        <td colspan="5" class="branco"><!-- <div><span><img src="./imagens/teste.jpg" class="img2"></span></div> --></td>
+        <td class ="azuld scrc" info="Hélio:
+                        Símbolo_=_He; 
+                        Nº_Atômico_=_2;
+                        Massa_Atômica_=_4.003;
+                        Configuração_Eletrônica_=_1s²;" >
+
+        <a class='clickEle' id_elemento='2' href="#">
+           <span><img src="./imagens/2.jpg" class='img1'></img></span>
+          <b><big>
+            <strong>2</strong>
+            <b><acronym class="colorgas">He</acronym></b>
+            <em>Helio</em>
+            <i>4,0026</i>
+          </big></b>
+        </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>  
+        <td class ="laranja scrc" info="Lítio:
+                        Símbolo_=_Li; 
+                        Nº_Atômico_=_3; 
+                        Massa_Atômica_=_6.941; 
+                        Configuração_Eletrônica_=_1s²_2s¹;">
+        <a href="#" id_elemento='3' class='clickEle'>
+          <span><img src="./imagens/3.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >3</strong>
+            <b><acronym>Li</acronym></b>
+            <em>Litio</em>
+            <i>6,94</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="amarelo scrc" info="Berílio:
+                        Símbol_=_Be; 
+                        Nº_Atômico_=_4; 
+                        Massa_Atômica_=_9.012; 
+                        Configuração_Eletrônica_=_1s²_2s²;" >
+        <a href="#" id_elemento='4' class='clickEle'>
+          <span><img src="./imagens/4.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >4</strong>
+            <b><acronym>Be</acronym></b>
+            <em>Brerilio</em>
+            <i>9,0122</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Boro:
+                        Símbolo_=_B; 
+                        Nº_Atômico_=_5; 
+                        Massa_Atômica_=_10.811; 
+                        Configuração_Eletrônica_=_1s²_2s²_2p¹;" >
+        <a href="#" id_elemento='5' class='clickEle'>
+          <span><img src="./imagens/5.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >5</strong>
+            <b><acronym>B</acronym></b>
+            <em>Boro</em>
+            <i>10,81</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Carbono:
+                        Símbolo_=_C; 
+                        Nº_Atômico_=_6; 
+                        Massa_Atômica_=_12.011;
+                        Configuração_Eletrônica_=_1s²_2s²_2p²;" >
+        <a href="#" id_elemento='6' class='clickEle'>
+          <span><img src="./imagens/6.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >6</strong>
+            <b><acronym>C</acronym></b>
+            <em>Carbono</em>
+            <i>12,011</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Nitrogênio:
+                      Símbolo_=_N; 
+                      Nº_Atômico_=_7; 
+                      Massa_Atômica_=_14.007; 
+                      Configuração_Eletrônica_=_1s²_2s²_2p³;" >
+        <a href="#" id_elemento='7' class='clickEle'>
+          <span><img src="./imagens/7.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >7</strong>
+            <b><acronym class="colorgas">N</acronym></b>
+            <em>Nitrogênio</em>
+            <i>14,007</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Oxigênio:
+                        Símbolo_=_O; 
+                        Nº_Atômico_=_8; 
+                        Massa_Atômica_=_15.999; 
+                        Configuração_Eletrônica_=_1s²_2s²_2p^4;" >
+        <a href="#"  class='clickEle' id_elemento='8'>
+          <span><img src="./imagens/8.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >8</strong>
+            <b><acronym class="colorgas">O</acronym></b>
+            <em>Oxigenio</em>
+            <i>15,999</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Flúor:
+                        Símbolo_=_F; 
+                        Nº_Atômico_=_9; 
+                        Massa_Atômica_=_18.998; 
+                        Configuração_Eletrônica_=_1s²_2s²_2p^5;" >
+        <a href="#"  class='clickEle' id_elemento='9'>
+          <span><img src="./imagens/9.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >9</strong>
+            <b><acronym class="colorgas">F</acronym></b>
+            <em>Fluor</em>
+            <i>18,998</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azuld scrc" info="Neônio:
+                        Símbolo_=_Ne;
+                        Nº_Atômico_=_10; 
+                        Massa_Atômica_=_20.18; 
+                        Configuração_Eletrônica_=_1s²_2s²_2p^6;" >
+        <a href="#"  class='clickEle' id_elemento='10'>
+          <span><img src="./imagens/10.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >10</strong>
+            <b><acronym class="colorgas">Ne</acronym></b>
+            <em>néonio</em>
+            <i>20,180</i>
+          </big></b>
+        </a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class ="laranja scrc" info="Sódio:
+                        Símbolo_=_Na; 
+                        Nº_Atômico_=_11;
+                        Massa_Atômica_=_22.99;
+                        Configuração_Eletrônica_=_[Ne]_3s¹;" >
+        <a href="#" class='clickEle' id_elemento='11'>
+          <span><img src="./imagens/11.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >11</strong>
+            <b><acronym>Na</acronym></b>
+            <em>Sodio</em>
+            <i>22,990</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="amarelo scrc" info="Magnésio:
+                        Símbolo_=_Me; 
+                        Nº_Atômico_=_12;
+                        Massa_Atômica_=_24.305; 
+                        Configuração_Eletrônica_=_[Ne]_3s²;" >
+        <a href="#" class='clickEle' id_elemento='12'>
+          <span><img src="./imagens/12.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >12</strong>
+            <b><acronym>Mg</acronym></b>
+            <em>Magnesio</em>
+            <i>24,305</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azul scrc" info="Alumínio:
+                        Símbolo_=_Al;
+                        Nº_Atômico_=_13; 
+                        Massa_Atômica_= 26.982;
+                        Configuração_Eletrônica_=_[Ne]_3s²_3p¹;" >
+        <a href="#" class='clickEle' id_elemento='13'>
+          <span><img src="./imagens/13.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >13</strong>
+            <b><acronym>Al</acronym></b>
+            <em>Aluminio</em>
+            <i>26,982</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Silício:
+                        Símbolo_=_Si; 
+                        Nº_Atômico_=_14; 
+                        Massa_Atômica_=_28.086;
+                        Configuração_Eletrônica_=_[Ne]_3s²_3p²;" >
+        <a href="#" class='clickEle' id_elemento='14'>
+          <span><img src="./imagens/14.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >14</strong>
+            <b><acronym>Si</acronym></b>
+            <em>Silicio</em>
+            <i>28,085</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Fósforo:
+                        Símbolo_=_P; 
+                        Nº_Atômico_=_15; 
+                        Massa_Atômica_=_30.974; 
+                        Configuração_Eletrônica_=_[Ne]_3s²_3p³;" >
+        <a href="#" class='clickEle' id_elemento='15'>
+          <span><img src="./imagens/15.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >15</strong>
+            <b><acronym>P</acronym></b>
+            <em>Fosforo</em>
+            <i>30,974</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Enxofre:
+                        Símbolo_=_S; 
+                        Nº_Atômico_=_16; 
+                        Massa_Atômica_=_32.065; 
+                        Configuração_Eletrônica_=_[Ne]_3s²_3p^4;" >
+        <a href="#" class='clickEle' id_elemento='16'>
+          <span><img src="./imagens/16.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >16</strong>
+            <b><acronym>S</acronym></b>
+            <em>Enxofre</em>
+            <i>32,06</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Cloro:
+                        Símbolo_=_Cl; 
+                        Nº_Atômico_=_17; 
+                        Massa_Atômica_=_35.453;
+                        Configuração_Eletrônica_=_[Ne]_3s²_3p^5;" >
+        <a href="#" class='clickEle' id_elemento='17'>
+          <span><img src="./imagens/17.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >17</strong>
+            <b><acronym>Cl</acronym></b>
+            <em>Cloro</em>
+            <i>35,45</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azuld scrc" info="Argônio:
+                        Símbolo_=_Ar;
+                        Nº_Atômico_=_18; 
+                        Massa_tômica_=_39.948; 
+                        Configuração_Eletrônica_=_[Ne]_3s²_3p^6;" >
+        <a href="#" class='clickEle' id_elemento='18'>
+          <span><img src="./imagens/18.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >18</strong>
+            <b><acronym class="colorgas">Ar</acronym></b>
+            <em>Argonio</em>
+            <i>39,948</i>
+          </big></b>
+        </a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>4</td>
+        <td class ="laranja scrc" info="Potássio:
+                        Símbolo_=_K; 
+                        Nº_Atômico_=_19;
+                        Massa_Atômica_=_39.098;
+                        Configuração_Eletrônica_=_[Ar]_4s¹;" >
+        <a href="#" class='clickEle' id_elemento='19'>
+          <span><img src="./imagens/19.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >19</strong>
+            <b><acronym>K</acronym></b>
+            <em>Potassio</em>
+            <i>399,098</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="amarelo scrc" info="Cálcio:
+                        Símbolo_=_Ca; 
+                        Nº_Atômico_=_20; 
+                        Massa_Atômica_=_40.078; 
+                        Configuração_Eletrônica_=_[Ar]_4s²;" >
+        <a href="#" class='clickEle' id_elemento='20'>
+          <span><img src="./imagens/20.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >20</strong>
+            <b><acronym>Ca</acronym></b>
+            <em>Calcio</em>
+            <i>40,078</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Escândio:
+                        Símbolo_=_Sc; 
+                        Nº_Atômico_=_21; 
+                        Massa_Atômica_=_44.956;
+                        Configuração_Eletrônica_=_[Ar]_3d¹_4s²;" >
+        <a href="#" class='clickEle' id_elemento='21'>
+          <span><img src="./imagens/21.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >21</strong>
+            <b><acronym>Sc</acronym></b>
+            <em>Escandio</em>
+            <i>44,956</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Titânio:
+                        Símbolo_=_Ti; 
+                        Nº_Atômico_=_22; 
+                        Massa_Atômica_=_47.867; 
+                        Configuração_Eletrônica_=_[Ar]_3d²_4s²;" >
+        <a href="#" class='clickEle' id_elemento='22'>
+          <span><img src="./imagens/22.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >22</strong>
+            <b><acronym>Ti</acronym></b>
+            <em>Titanio</em>
+            <i>47,867</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Vandio:
+                        Símbolo_=_V; 
+                        Nº_Atômico_=_23; 
+                        Massa_Atômica_=_50.941;
+                        Configuração_Eletrônica_=_[Ar]_3d³_4s²;" >
+        <a href="#" class='clickEle' id_elemento='23'>
+          <span><img src="./imagens/23.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >23</strong>
+            <b><acronym>V</acronym></b>
+            <em>Vandio</em>
+            <i>50,942</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Cromo:
+                      Símbolo_=_Cr;
+                      Nº_Atômico_=_24; 
+                      Massa_Atômica_=_51.996;
+                      Configuração_Eletrônica_=_[Ar]_3d^4_4s²;" >
+        <a href="#" class='clickEle' id_elemento='24'>
+          <span><img src="./imagens/24.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >24</strong>
+            <b><acronym>Cr</acronym></b>
+            <em>Cromo</em>
+            <i>51,996</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Manganês:
+                        Símbolo_=_Mn; 
+                        Nº_Atômico_=_25; 
+                        Massa_Atômica_=_54.938;
+                        Configuração_Eletrônica_=_[Ar]_3d^5_4s²;" >
+        <a href="#" class='clickEle' id_elemento='25'>
+          <span><img src="./imagens/25.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >25</strong>
+            <b><acronym>Mn</acronym></b>
+            <em>Manganes</em>
+            <i>54,938</i>
+          </big></b> 
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Ferro:
+                        Símbolo_=_Fe; 
+                        Nº_Atômico_=_26; 
+                        Massa_Atômica_=_55.845;
+                        Configuração_Eletrônica_=_[Ar]_3d^6_4s²;" >
+        <a href="#" class='clickEle' id_elemento='26'>
+          <span><img src="./imagens/26.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >26</strong>
+            <b><acronym>Fe</acronym></b>
+            <em>Ferro</em>
+            <i>55,845</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Cobalto:
+                        Símbolo_=_Co;
+                        Nº_Atômico_=_27; 
+                        Massa_Atômica_=_58.933;
+                        Configuração_Eletrônica_=_[Ar]_3d^7_4s²;" >
+        <a href="#" class='clickEle' id_elemento='27'>
+          <span><img src="./imagens/27.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >27</strong>
+            <b><acronym>Co</acronym></b>
+            <em>Cobalto</em>
+            <i>58,933</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Níquel:
+                        Símbolo_=_Ni;
+                        Nº_Atômico_=_28; 
+                        Massa_Atômica_=_58.693; 
+                        Configuração_Eletrônica_=_[Ar]_3d^8_4s²;" >
+        <a href="#" class='clickEle' id_elemento='28'>
+          <span><img src="./imagens/28.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >28</strong>
+            <b><acronym>Ni</acronym></b>
+            <em>Niquel</em>
+            <i>58,963</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Cobre:
+                        Símbolo_=_Cu; 
+                        Nº_Atômico_=_29; 
+                        Massa_Atômica_=_63.546; 
+                        Configuração_Eletrônica_=_[Ar]_3d^9_4s²;" >
+        <a href="#" class='clickEle' id_elemento='29'>
+          <span><img src="./imagens/29.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >29</strong>
+            <b><acronym>Cu</acronym></b>
+            <em>Cobre</em>
+            <i>63,546</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Zinco:
+                        Símbolo_=_Zn; 
+                        Nº_Atômico_=_30; 
+                        Massa_Atômica_=_65.409;
+                        Configuração_Eletrônica_=_[Ar]_3d^10_4s²;" >
+        <a href="#" class='clickEle' id_elemento='30'>
+          <span><img src="./imagens/30.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >30</strong>
+            <b><acronym>Zn</acronym></b>
+            <em>Zinco</em>
+            <i>65,38</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azul scrc" info="Gálio:
+                        Símbolo_=_Ga; 
+                        Nº_Atômico_=_31; 
+                        Massa_Atômica_=_69.723;
+                        Configuração_Eletrônica_=_[Ar]_3d^10_4s²_4p¹;" >
+        <a href="#" class='clickEle' id_elemento='31'>
+          <span><img src="./imagens/31.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >31</strong>
+            <b><acronym>Ga</acronym></b>
+            <em>Galio</em>
+            <i>69,723</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azul scrc" info="Germânio:
+                        Símbolo_=_Ge;
+                        Nº_Atômico_=_32;
+                        Massa_Atômica_=_72.64;
+                        Configuração_Eletrônica_=_[Ar]_3d^10_4s²_4p²;" >
+        <a href="#" class='clickEle' id_elemento='32'>
+           <span><img src="./imagens/32.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >32</strong>
+            <b><acronym>Ge</acronym></b>
+            <em>Germanio</em>
+            <i>72,630</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Arsênio:
+                        Símbolo_=_As;
+                        Nº_Atômico_=_33; 
+                        Massa_Atômica_=_74.922; 
+                        Configuração_Eletrônica_=_[Ar]_3d^10_4s²_4p³;" >
+        <a href="#" class='clickEle' id_elemento='33'>
+           <span><img src="./imagens/33.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >33</strong>
+            <b><acronym>As</acronym></b>
+            <em>Arsenio</em>
+            <i>74,922</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Selênio:
+                        Símbolo_=_Se;
+                        Nº_Atômico_=_34;
+                        Massa_Atômica_=_78.96; 
+                        Configuração_Eletrônica_=_[Ar]_3d^10_4s²_4p^4;" >
+        <a href="#" class='clickEle' id_elemento='34'>
+           <span><img src="./imagens/34.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >34</strong>
+            <b><acronym>Se</acronym></b>
+            <em>Selenio</em>
+            <i>78,971</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Bromo:
+                        Símbolo_=_Br; 
+                        Nº_Atômico_=_35;
+                        Massa_Atômica_=_79.904;
+                        Configuração_Eletrônica_=_[Ar]_3d^10_4s²_4p^5;" >
+        <a href="#" class='clickEle' id_elemento='35'>
+           <span><img src="./imagens/35.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >35</strong>
+            <b><acronym class="colorred">Br</acronym></b>
+            <em>Bromo</em>
+            <i>79,904</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azuld scrc" info="Criptônio:
+                        Símbolo_=_Kr; 
+                        Nº_Atômico_=_36; 
+                        Massa_Atômica_=_83.798;
+                        Configuração_Eletrônica_=_[[Ar]_3d^10_4s²_4p^6;" >
+        <a href="#" class='clickEle' id_elemento='36'>
+           <span><img src="./imagens/36.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >36</strong>
+            <b><acronym class="colorgas">Kr</acronym></b>
+            <em>Cripton</em>
+            <i>83,798</i>
+          </big></b>
+        </a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>5</td>
+        <td class ="laranja scrc" info="Rubídio:
+                        Símbolo_=_Rb; 
+                        Nº_Atômico_=_37; 
+                        Massa_Atômica_=_85.468;
+                        Configuração_Eletrônica_=_[Kr]_5s¹;" >
+        <a href="#" class='clickEle' id_elemento='37'>
+           <span><img src="./imagens/37.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >37</strong>
+            <b><acronym>Rb</acronym></b>
+            <em>Rubidio</em>
+            <i>85,468</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="amarelo scrc" info="Estrôncio:
+                        Símbolo_=_Sr; 
+                        Nº_Atômico_=_38;
+                        Massa_Atômica_=_87.62;
+                        Configuração_Eletrônica_=_[Kr]_5s²;" >
+        <a href="#" class='clickEle' id_elemento='38'>
+           <span><img src="./imagens/38.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >38</strong>
+            <b><acronym>Sr</acronym></b>
+            <em>Estroncio</em>
+            <i>87,62</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Ítrio:
+                      Símbolo_=_Y;
+                      Nº_Atômico_=_39; 
+                      Massa_Atômica_=_88.906; 
+                      Configuração_Eletrônica_=_[Kr]_4d¹_5s²;" >
+        <a href="#" class='clickEle' id_elemento='39'>
+           <span><img src="./imagens/39.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >39</strong>
+            <b><acronym>Y</acronym></b>
+            <em>Itrio</em>
+            <i>88,906</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Zircônio:
+                      Símbolo_=_Zr; 
+                      Nº_Atômico_=_40; 
+                      Massa_Atômica_=_91.224;
+                      Configuração_Eletrônica_=_[Kr]_4d²_5s²;" >
+        <a href="#" class='clickEle' id_elemento='40'>
+           <span><img src="./imagens/40.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >40</strong>
+            <b><acronym>Zr</acronym></b>
+            <em>Zinconio</em>
+            <i>91,224</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Nióbio:
+                        Símbolo_=_Nb; 
+                        Nº_Atômico_=_41;
+                        Massa_Atômica_=_92.90638; 
+                        Configuração_Eletrônica_=_[Kr]_4d³_5s²;" >
+        <a href="#" class='clickEle' id_elemento='41'>
+          <span><img src="./imagens/41.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >41</strong>
+            <b><acronym>Nb</acronym></b>
+            <em>Niobio</em>
+            <i>92,906</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Molibdênio:
+                        Símbolo_=_Mo;
+                        Nº_Atômico_=_42;
+                        Massa_Atômica_=_95.94; 
+                        Configuração_Eletrônica_=_[Kr]_4d^4_5s²;" >
+        <a href="#" class='clickEle' id_elemento='42'>
+          <span><img src="./imagens/42.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >42</strong>
+            <b><acronym>Mo</acronym></b>
+            <em>Molibdenio</em>
+            <i>95,95</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Tecnécio:
+                        Símbolo_=_Tc; 
+                        Nº_Atômico_=_43; 
+                        Massa_Atômica_=_98; 
+                        Configuração_Eletrônica_=_[Kr]_4d^5_5s²;" >
+        <a href="#" class='clickEle' id_elemento='43'>
+          <span><img src="./imagens/43.gif" class='img1'></img></span>
+          <b><big>
+            <strong >43</strong>
+            <b><acronym>Tc</acronym></b>
+            <em>Tecnecio</em>
+            <i>98</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Rutênio:
+                      Símbolo_=_Ru; 
+                      Nº_Atômico_=_44; 
+                      Massa_Atômica_=_101.07; 
+                      Configuração_Eletrônica_=_[Kr]_4d^6_5s²;" >
+        <a href="#" class='clickEle' id_elemento='44'>
+          <span><img src="./imagens/44.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >44</strong>
+            <b><acronym>Ru</acronym></b>
+            <em>Rutenio</em>
+            <i>101,07</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Ródio:
+                        Símbolo_=_Rh;
+                        Nº_Atômico_=_45;
+                        Massa_Atômica_=_102.90550; 
+                        Configuração_Eletrônica_=_[Kr]_4d^7_5s²;" >
+        <a href="#" class='clickEle' id_elemento='45'>
+          <span><img src="./imagens/45.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >45</strong>
+            <b><acronym>Rh</acronym></b>
+            <em>Rodio</em>
+            <i>102,91</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Paládio:
+                        Símbolo_=_Pd; 
+                        Nº_Atômico_=_46; 
+                        Massa_Atômica_=_106.42; 
+                        Configuração_Eletrônica_=_[Kr]_4d^8_5s²;" >
+        <a href="#" class='clickEle' id_elemento='46'>
+          <span><img src="./imagens/46.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >46</strong>
+            <b><acronym>Pd</acronym></b>
+            <em>Paladio</em>
+            <i>106,42</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Prata:
+                        Símbolo_=_Ag; 
+                        Nº_Atômico_=_47; 
+                        Massa_Atômica_=_107.868;
+                        Configuração_Eletrônica_=_[Kr]_4d^9_5s²;" >
+        <a href="#" class='clickEle' id_elemento='47'>
+          <span><img src="./imagens/47.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >47</strong>
+            <b><acronym>Ag</acronym></b>
+            <em>Prata</em>
+            <i>107,87</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Cádmio:
+                      Símbolo_=_Cd; 
+                      Nº_Atômico_=_48; 
+                      Massa_Atômica_=_112.411; 
+                      Configuração_Eletrônica_=_[Kr]_4d^10_5s²;" >
+        <a href="#" class='clickEle' id_elemento='48'>
+          <span><img src="./imagens/48.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >48</strong>
+            <b><acronym>Cd</acronym></b>
+            <em>Cadmio</em>
+            <i>112,41</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azul scrc" info="Índio:
+                        Símbolo_=_In; 
+                        Nº_Atômico_=_49; 
+                        Massa_Atômica_=_114.818; 
+                        Configuração_Eletrônica_=_[Kr]_4d^10_5s²_5p¹;" >
+        <a href="#" class='clickEle' id_elemento='49'>
+          <span><img src="./imagens/49.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >49</strong>
+            <b><acronym>In</acronym></b>
+            <em>Indio</em>
+            <i>114,82</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azul scrc" info="Estanho:
+                        Símbolo_=_Sn; 
+                        Nº_Atômico_=_50;
+                        Massa_Atômica_=_118.71;
+                        Configuração_Eletrônica_=_[Kr]_4d^10_5s²_5p²;" >
+        <a href="#" class='clickEle' id_elemento='50'>
+          <span><img src="./imagens/50.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >50</strong>
+            <b><acronym>Sn</acronym></b>
+            <em>Estanho</em>
+            <i>118,71</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azul scrc" info="Antimônio:
+                      Símbolo_=_Sb; 
+                      Nº_Atômico_=_51; 
+                      Massa_Atômica_=_121.76; 
+                      Configuração_Eletrônica_=_[Kr]_4d^10_5s²_5p³;" >
+        <a href="#" class='clickEle' id_elemento='51'>
+          <span><img src="./imagens/51.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >51</strong>
+            <b><acronym>Sb</acronym></b>
+            <em>Antimonio</em>
+            <i>121,76</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Telúrio:
+                        Símbolo_=_Te;
+                        Nº_Atômico_=_52; 
+                        Massa_Atômica_=_128.6; 
+                        Configuração_Eletrônica_=_[Kr]_4d^10_5s²_5p^4;" >
+        <a href="#" class='clickEle' id_elemento='52'>
+          <span><img src="./imagens/52.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >52</strong>
+            <b><acronym>Te</acronym></b>
+            <em>Telurio</em>
+            <i>127,60</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Iodo:
+                        Símbolo_=_I; 
+                        Nº_Atômico_=_53; 
+                        Massa_Atômica_=_126.90447;
+                        Configuração_Eletrônica_=_[Kr]_4d^10_5s²_5p^5;" >
+        <a href="#" class='clickEle' id_elemento='53'>
+            <span><img src="./imagens/53.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >53</strong>
+            <b><acronym>I</acronym></b>
+            <em>Iodo</em>
+            <i>126,90</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azuld scrc" info="Xenonio:
+                        Símbolo_=_Xe; 
+                        Nº_Atômico_=_54; 
+                        Massa_Atômica_=_131.293; 
+                        Configuração_Eletrônica_=_[Kr]_4d^10_5s²_5p^6;" >
+        <a href="#" class='clickEle' id_elemento='54'>
+            <span><img src="./imagens/54.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >54</strong>
+            <b><acronym class="colorgas">Xe</acronym></b>
+            <em>Xenonio</em>
+            <i>131,29</i>
+          </big></b>
+        </a>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>6</td>
+        <td class ="laranja scrc" info="Césio:
+                        Símbolo_=_Cs; 
+                        Nº_Atômico_=_55;
+                        Massa_Atômica_=_132.905;
+                        Configuração_Eletrônica_=_[Xe]_6s1;" >
+        <a href="#" class='clickEle' id_elemento='55'>
+            <span><img src="./imagens/55.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >55</strong>
+            <b><acronym>Cs</acronym></b>
+            <em>Cesio</em>
+            <i>132,91</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="amarelo scrc" info="Bário:
+                        Símbolo_=_Ba; 
+                        Nº_Atômico_=_56;
+                        Massa_Atômica_=_137.327;
+                        Configuração_Eletrônica_=_[Xe]_6s²;" >
+        <a href="#" class='clickEle' id_elemento='56'>
+            <span><img src="./imagens/56.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >56</strong>
+            <b><acronym>Ba</acronym></b>
+            <em>Bario</em>
+            <i>137,33</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa tam scrc">
+        
+        57-71
+        </td>
+        <td class ="rosa scrc" info="Háfnio:
+                        Símbolo_=_Hf; 
+                        Nº_Atômico_=_72; 
+                        Massa_Atômica_=_178.49; 
+                        Configuração_Eletrônica_=_[Xe]_4f^14_5d²_6s²;" >
+        <a href="#" class='clickEle' id_elemento='72'>
+            <span><img src="./imagens/72.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >72</strong>
+            <b><acronym>Hf</acronym></b>
+            <em>Hafnio</em>
+            <i>178,49</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Tântalo:
+                        Símbolo_=_Ta;
+                        Nº_Atômico_=_73; 
+                        Massa_Atômica_=_180.948;
+                        Configuração_Eletrônica_=_[Xe]_4f^14_5d³_6s²;" >
+        <a href="#" class='clickEle' id_elemento='73'>
+            <span><img src="./imagens/73.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >73</strong>
+            <b><acronym>Ta</acronym></b>
+            <em>Tantalo</em>
+            <i>180,95</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Tungstênio:
+                        Símbolo_=_W; 
+                        Nº_Atômico_=_74; 
+                        Massa_Atômica_=_183.84; 
+                        Configuração_Eletrônica_=_[Xe]_4f^14_5d^4_6s²;" >
+        <a href="#" class='clickEle' id_elemento='74'>
+          <span><img src="./imagens/74.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >74</strong>
+            <b><acronym>W</acronym></b>
+            <em>Tugstenio</em>
+            <i>183,84</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Rênio:
+                                     Símbolo_=_Re;
+                                     Nº_Atômico_=_75; 
+                                     Massa_Atômica_=_186.21; 
+                                     Configuração_Eletrônica_=_[Xe]_6s²_4f^14_5d^5;
+" >
+        <a href="#" class='clickEle' id_elemento='75'>
+          <span><img src="./imagens/75.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >75</strong>
+            <b><acronym>Re</acronym></b>
+            <em>Renio</em>
+            <i>186,21</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Ósmio:
+                                    Símbolo_=_Os; 
+                                    Nº_Atômico_=_76; 
+                                    Massa_Atômica_=_190.23; 
+                                    Configuração_Eletrônica_=_[Xe]_6s²_4f^14_5d^6;
+" >
+        <a href="#" class='clickEle' id_elemento='76'>
+          <span><img src="./imagens/76.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >76</strong>
+            <b><acronym>Os</acronym></b>
+            <em>Osmio</em>
+            <i>190,23</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Iridio:
+                      Símbolo_=_Ir; 
+                      Nº_Atômico_=_77; 
+                      Massa_Atômica_=_192.22; 
+                      Configuração_Eletrônica_=_[Xe]_6s²_4f^14_5d^7;
+                      " >
+        <a href="#" class='clickEle' id_elemento='77'>
+          <span><img src="./imagens/77.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >77</strong>
+            <b><acronym>Ir</acronym></b>
+            <em>Iridio</em>
+            <i>192,22</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Platina:
+                                    Símbolo_=_Pt; 
+                                    Nº_Atômico_=_78; 
+                                    Massa_Atômica_=_195.08; 
+                                    Configuração_Eletrônica_=_[Xe]_6s¹_4f^14_5d^9;" >
+        <a href="#" class='clickEle' id_elemento='78'>
+          <span><img src="./imagens/78.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >78</strong>
+            <b><acronym>Pt</acronym></b>
+            <em>Platina</em>
+            <i>195,08</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Ouro:
+                                  Símbolo_=_Au; 
+                                  Nº_Atômico_=_79; 
+                                  Massa_Atômica_=_196.97; 
+                                  Configuração_Eletrônica_=_[Xe]_6s¹_4f^14_5d^10;" >
+        <a href="#" class='clickEle' id_elemento='79'>
+          <span><img src="./imagens/79.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >79</strong>
+            <b><acronym>Au</acronym></b>
+            <em>Ouro</em>
+            <i>196,97</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="rosa scrc" info="Mercurio:
+                                    Símbolo_=_Hg; 
+                                    Nº_Atômico_=_80; 
+                                    Massa_Atômica_=_200.59; 
+                                    Configuração_Eletrônica_=_[Xe]_6s²_4f^14_5d^10;" >
+        <a href="#" class='clickEle' id_elemento='80'>
+          <span><img src="./imagens/80.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >80</strong>
+            <b><acronym class="colorred">Hg</acronym></b>
+            <em>Mercurio</em>
+            <i>200,59</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azul scrc" info="Talio:
+                                 Símbolo_=_Tl; 
+                                 Nº_Atômico_=_81; 
+                                 Mass_Atômica_=_204.38; 
+                                 Configuração_Eletrônica_=_[Xe]_6s²_4f^14_5d^10_6p¹; " >
+        <a href="#" class='clickEle' id_elemento='81'>
+          <span><img src="./imagens/81.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >81</strong>
+            <b><acronym>Tl</acronym></b>
+            <em>Talio</em>
+            <i>204,38</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azul scrc" info="Chumbo:
+                                    Símbolo_=_Pb; 
+                                    Nº_Atômico_=_82; 
+                                    Massa_Atômica_=_207.2; 
+                                    Configuração_Eletrônica_=_[Xe]_6s²_4f^14_5d^10_6p²;" >
+        <a href="#" class='clickEle' id_elemento='82'>
+          <span><img src="./imagens/82.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >82</strong>
+            <b><acronym>Pb</acronym></b>
+            <em>Chumbo</em>
+            <i>207,2</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azul scrc" info="Bismuto:
+                      Símbolo_=_Bi; 
+                      Nº_Atômico_=_83; 
+                      Massa_Atômica_=_208.98; 
+                      Configuração_Eletrônica_=_[Xe]_6s_4f^14_5d^10_6p³;" >
+        <a href="#" class='clickEle' id_elemento='83'>
+          <span><img src="./imagens/83.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >83</strong>
+            <b><acronym>Bi</acronym></b>
+            <em>Bismuto</em>
+            <i>208,98</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azul scrc" info="Polonio:
+                      Símbolo_=_Po; 
+                      Nº_Atômico_=_84; 
+                      Massa_Atômica_=_209; 
+                      Configuração_Eletrônica_=_[Xe]_6s²_4f^14_5d^10_6p^4" >
+        <a href="#" class='clickEle' id_elemento='84'>
+          <span><img src="./imagens/84.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >84</strong>
+            <b><acronym>Po</acronym></b>
+            <em>Polonio</em>
+            <i>209</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="verde scrc" info="Astato:
+                      Símbolo_=_At; 
+                      Nº_Atômico_=_85; 
+                      Massa_Atômica_=_210; 
+                      Configuração_Eletrônica_=_[Xe]_6s²_4f^14_5d^10_6p^5;" >
+        <a href="#" class='clickEle' id_elemento='85'>
+          <span><img src="./imagens/85.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >85</strong>
+            <b><acronym>At</acronym></b>
+            <em>Astato</em>
+            <i>210</i>
+          </big></b>
+        </a>
+        </td>
+        <td class ="azuld scrc" info="Radon:
+                      Símbolo_=_Rn; 
+                      Nº_Atômico_=_86; 
+                      Massa_Atômica_=_222; 
+                      Configuração_Eletrônica_=_[Xe]_6s²_4f^14_5d^10_6p^6;" >
+        <a href="#" class='clickEle' id_elemento='86'>
+          <span><img src="./imagens/86.jpg" class='img1'></img></span>
+          <b><big>
+            <strong >86</strong>
+            <b><acronym class="colorgas">Rn</acronym></b>
+            <em>Radon</em>
+            <i>222</i>
+          </big></b>
+        </a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>7</td>
+        <td class ="laranja scrc" info=" Francio:
+                      Símbolo_=_Fr; 
+                      Nº_Atômico_=_87; 
+                      Massa_Atômica_=_223; 
+                      onfiguração_Eletrônica_=_[Rn]_7s¹;" >
+          <a href="#" class='clickEle' id_elemento='87'>
+            <span><img src="./imagens/87.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >87</strong>
+              <b><acronym>Fr</acronym></b>
+              <em>Francio</em>
+              <i>223</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="amarelo scrc" info="Radio:
+                      Símbolo_=_Ra; 
+                      Nº_Atômico_=_88; 
+                      Massa_Atômica_=_226; 
+                      Configuração_Eletrônica_=_[Rn]_7s²;" >
+          <a href="#" class='clickEle' id_elemento='88'>
+            <span><img src="./imagens/88.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >88</strong>
+              <b><acronym>Ra</acronym></b>
+              <em>Radio</em>
+              <i>226</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="rosa tam scrc">
+        
+        89-103
+        </td>
+        <td class ="rosa scrc" info="Rutherfordio:
+                      Símbolo_=_Rf; 
+                      Nº_Atômico_=_104;
+                      Massa_Atômica_=_267; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d²;" >
+          <a href="#" class='clickEle' id_elemento='104'>
+            <span><img src="./imagens/104.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >104</strong>
+              <b><acronym class="colordesc">Rf</acronym></b>
+              <em>Rutherfordio</em>
+              <i>267</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="rosa scrc" info="Dubnio:
+                      Símbolo_=_Db; 
+                      Nº_Atômico_=_105; 
+                      Massa_Atômica_=_268; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d³;" >
+          <a href="#" class='clickEle' id_elemento='105'>
+            <span><img src="./imagens/105.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >105</strong>
+              <b><acronym class="colordesc">Db</acronym></b>
+              <em>Dubnio</em>
+              <i>268</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="rosa scrc" info="Seaborgio:
+                      Símbolo_=_Sg; 
+                      Nº_Atômico)_=_106; 
+                      Massa_Atômica_=_269; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^4;" >
+          <a href="#" class='clickEle' id_elemento='106'>
+            <span><img src="./imagens/seaborgio.png" class='img1'></img></span>
+
+            <b><big>
+              <strong >106</strong>
+              <b><acronym class="colordesc">Sg</acronym></b>
+              <em>Seaborgio</em>
+              <i>269</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="rosa scrc" info="Bohrio:
+                      Símbolo_=_Bh; 
+                      Nº_Atômico_=_107; 
+                      Massa_Atômica_=_270; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^5;" >
+          <a href="#" class='clickEle' id_elemento='107'>
+            <span><img src="./imagens/bohrio.JPG" class='img1'></img></span>
+            <b><big>
+              <strong >107</strong>
+              <b><acronym class="colordesc">Bh</acronym></b>
+              <em>Bohrio</em>
+              <i>270</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="rosa scrc" info="Hassio:
+                      Símbolo_=_Hs; 
+                      Nº_Atômico_=_108; 
+                      Massa_Atômica = 277; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^6;" >
+          <a href="#" class='clickEle' id_elemento='108'>
+            <!-- <span><img src="./imagens/108.jpg" class='img1'></img></span> -->
+
+            <b><big>
+              <strong >108</strong>
+              <b><acronym class="colordesc">Hs</acronym></b>
+              <em>Hassio</em>
+              <i>277</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="rosa scrc" info="Meitnerio:
+                       Símbolo_=_Mt;
+                       Nº_Atômico_=_109; 
+                       Massa_Atômica_=_278; 
+                       Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^7;" >
+          <a href="#" class='clickEle' id_elemento='109'>
+            <!-- <span><img src="./imagens/109.jpg" class='img1'></img></span> -->
+            <b><big>
+              <strong >109</strong>
+              <b><acronym class="colordesc">Mt</acronym></b>
+              <em>Meitnerio</em>
+              <i>278</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="rosa scrc" info="Darmstácio:
+                Símbolo_=_Ds; 
+                Nº_Atômico_=_110; 
+                Massa_Atômica_=_281; 
+                Configuração_Eletrônica_=_[Rn]_7s¹_5f^14_6d^9" >
+          <a href="#" class='clickEle' id_elemento='110'>
+            <!-- <span><img src="./imagens/110.png" class='img1'></img></span> -->
+            <b><big>
+              <strong >110</strong>
+              <b><acronym class="colordesc">Ds</acronym></b>
+              <em>Damstacio</em>
+              <i>281</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="rosa scrc" info="Roentgenio:
+                      Símbolo_=_Rg; 
+                      Nº_Atômico_=_111; 
+                      Massa_Atômica_=_282; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^9;" >
+          <a href="#" class='clickEle' id_elemento='111'>
+            <!-- <span><img src="./imagens/111.jpg" class='img1'></img></span> -->
+            <b><big>
+              <strong >111</strong>
+              <b><acronym class="colordesc">Rg</acronym></b>
+              <em>Roentgenio</em>
+              <i>282</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="rosa scrc" info="Copernicio:
+                      Símbolo_=_Cn; 
+                      Nº_Atômico_=_112; 
+                      Massa_Atômica_=_285; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^10;" >
+          <a href="#" class='clickEle' id_elemento='112'>
+            <!-- <span><img src="./imagens/112.jpg" class='img1'></img></span> -->
+            <b><big>
+              <strong >112</strong>
+              <b><acronym class="colordesc">Cn</acronym></b>
+              <em>Copernicio</em>
+              <i>285</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="azul scrc" info="Nihonium:
+                      Símbolo_=_Nh; 
+                      Nº_Atômico_=_113; 
+                      Massa_Atômica_=_286; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^10_7p¹;" >
+          <a href="#" class='clickEle' id_elemento='113'>
+            <!-- <span><img src="./imagens/113.jpg" class='img1'></img></span> -->
+            <b><big>
+              <strong >113</strong>
+              <b><acronym class="colordesc">Nh</acronym></b>
+              <em>Nihonium</em>
+              <i>286</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="azul scrc" info="Flerovio:
+                      Símbolo_=_Fl;
+                      Nº_Atômico_=_114; 
+                      Massa_Atômica_=_289; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^10_7p²;" >
+          <a href="#" class='clickEle' id_elemento='114'>
+            <!-- <span><img src="./imagens/114.jpg" class='img1'></img></span> -->
+            <b><big>
+              <strong >114</strong>
+              <b><acronym class="colordesc">Fl</acronym></b>
+              <em>Flerovio</em>
+              <i>289</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="azul scrc" info="Moscovium:
+                      Símbolo_=_Mc; 
+                      Nº_Atômico_=_115; 
+                      Massa_Atômica_=_290; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^10_7p³;" >
+          <a href="#" class='clickEle' id_elemento='115'>
+            <!-- <span><img src="./imagens/115.jpg" class='img1'></img></span> -->
+            <b><big>
+              <strong >115</strong>
+              <b><acronym class="colordesc">Mc</acronym></b>
+              <em>Moscovium</em>
+              <i>290</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="azul scrc" info="Livemorio:
+                          Símbolo_=_Lv; 
+                          Nº_Atômico_=_116; 
+                          Massa_Atômica_=_293; 
+                          Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^10_7p^4;" >
+          <a href="#" class='clickEle' id_elemento='116'>
+            <!-- <span><img src="./imagens/116.jpg" class='img1'></img></span> -->
+            <b><big>
+              <strong >116</strong>
+              <b><acronym class="colordesc">Lv</acronym></b>
+              <em>Livemorio</em>
+              <i>293</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="azul scrc" info="Tennessine:
+                      Símbolo_=_Ts; 
+                      Nº_Atômico_=_117; 
+                      Massa_Atômica_=_294; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^10_7p^5;" >
+          <a href="#" class='clickEle' id_elemento='117'>
+            <!-- <span><img src="./imagens/117.jpg" class='img1'></img></span> -->
+            <b><big>
+              <strong >117</strong>
+              <b><acronym class="colordesc">Ts</acronym></b>
+              <em>Tennessine</em>
+              <i>294</i>
+            </big></b>
+          </a>
+        </td>
+        <td class ="azuld scrc" info="Oganesson:
+                      Símbolo_=_Og; 
+                      Nº_Atômico_=_118; 
+                      Massa_Atômica_=_294; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^14_6d^10_7p^6;" >
+          <a href="#" class='clickEle' id_elemento='118'>
+            <!-- <span><img src="./imagens/118.jpg" class='img1'></img></span> -->
+            <b><big>
+              <strong >118</strong>
+              <b><acronym class="colordesc">Og</acronym></b>
+              <em>Oganesson</em>
+              <i>294</i>
+            </big></b>
+          </a>
+        </td>
+      </tr>
+      <tr id="aaaa" class="desable">
+        <td colspan="2" rowspan="5"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="desable"></td>
+        <td colspan="15">Para os elementos sem isótopos estáveis, o número de massa do isótopo com a meia-vida mais longa está entre parênteses.</td>
+      </tr>
+      <tr class="desable">
+        <td rowspan="3"></td>
+      </tr>
+      <tr id="rodape" class="scrc">
+        <td class="scrc" info="Lantânio:
+                        Símbolo_=_La;
+                        Nº_Atômico_=_57;
+                        Massa Atômica_=_138.91;
+                        Configuração_Eletrônica_=_[Xe]_6s²_5d¹;" >
+          <a href="#" class='clickEle' id_elemento='57'>
+            <span><img src="./imagens/57.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >57</strong>
+              <b><acronym>La</acronym></b>
+              <em>Lantânio</em>
+              <i>138,91</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Cério:
+                    Símbolo_=)_Ce; 
+                    Nº_Atômico_=_58; 
+                    Massa_Atômica_=_140.12; 
+                    Configuração_Eletrônica_=_[Xe]_6s²_5f¹_5d¹;" >
+          <a href="#" class='clickEle' id_elemento='58'>
+            <span><img src="./imagens/58.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >58</strong>
+              <b><acronym>Ce</acronym></b>
+              <em>Cério</em>
+              <i>140,12</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Praseodímio:
+                      Símbolo_=_Pr; 
+                      Nº_Atômico_=_59; 
+                      Massa_Atômica_=_140.91; 
+                      Configuração_Eletrônica_=_[Xe]_6s²_4f³;" >
+          <a href="#" class='clickEle' id_elemento='59'>
+                  <span><img src="./imagens/59.jpg" class='img1'></img></span>
+            <b><big>
+              <strong>59</strong>
+              <b><acronym>Pr</acronym></b>
+              <em>Praseodímio</em>
+                <i>140,91</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Neodímio:
+                        Símbolo_=_Nd; 
+                        Nº_Atômico_=_60; 
+                        Massa_Atômica_=_144.24; 
+                        Configuração_Eletrônica_=_[Xe]_6s²_4f^4;" >
+          <a href="#" class='clickEle' id_elemento='60'>
+                  <span><img src="./imagens/60.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >60</strong>
+              <b><acronym>Nd</acronym></b>
+              <em>Neodímio</em>
+              <i>144,24</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Promécio:
+                        Símbolo_=_Pm; 
+                        Nº_Atômico_=_61; 
+                        Massa_Atômica_=_145; 
+                        Configuração_Eletrônica_=_[Xe]_6s²_4f^5;" >
+          <a href="#" class='clickEle' id_elemento='61'>
+                  <span><img src="./imagens/61.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >61</strong>
+              <b><acronym class="colordesc">Pm</acronym></b>
+              <em>Promécio</em>
+              <i>145</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Samário:
+                        Símbolo_=_Sm; 
+                        Nº_Atômico_=_62; 
+                        Massa_Atômica_=_150.36; 
+                        Configuração_Eletrônica_=_[Xe]_6s²_4f^6;" >
+          <a href="#" class='clickEle' id_elemento='62'>
+                  <span><img src="./imagens/62.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >62</strong>
+              <b><acronym>Sm</acronym></b>
+              <em>Samário</em>
+              <i>150,36</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Európio:
+                        Símbolo_=_Eu; 
+                        Nº_Atômico_=_63; 
+                        Massa_Atômica_=_151.96; 
+                        Configuração_Eletrônica_=_[Xe]_6s²_4f^7" >
+          <a href="#" class='clickEle' id_elemento='63'>
+                  <span><img src="./imagens/63.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >63</strong>
+              <b><acronym>Eu</acronym></b>
+              <em>Európio</em>
+              <i>151,96</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Gadolínio:
+                        Símbolo_=_Gd; 
+                        Nº Atômico_=_64; 
+                        Massa_Atômica_=_157.25; 
+                        Configuração_Eletrônica_=_[Xe]_6s²_4f^7_5d¹;" >
+          <a href="#" class='clickEle' id_elemento='64'>
+                  <span><img src="./imagens/64.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >64</strong>
+              <b><acronym>Gd</acronym></b>
+              <em>Gadolínio</em>
+              <i>157,25</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Térbio:
+                        Símbolo_=_Tb; 
+                        Nº_Atômico_=_65; 
+                        Massa_Atômica_=_158.93; 
+                        Configuração_Eletrônica_=_[Xe]_6s²_4f^9;" >
+          <a href="#" class='clickEle' id_elemento='65'>
+                  <span><img src="./imagens/65.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >65</strong>
+              <b><acronym>Tb</acronym></b>
+              <em>Térbio</em>
+              <i>158,93</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Disprósio:
+                        Símbolo_=_Dy; 
+                        Nº_Atômico_=_66; 
+                        Massa_Atômica_=_162.50; 
+                        Configuração_Eletrônica_=_[Xe]_6s²_4f^10;" >
+          <a href="#" class='clickEle' id_elemento='66'>
+                  <span><img src="./imagens/66.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >66</strong>
+              <b><acronym>Dy</acronym></b>
+              <em>Disprósio</em>
+              <i>162,50</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Hólmio:
+                        Símbolo_=_Ho; 
+                        Nº_Atômico_=_67; 
+                        Massa_Atômica_=_164.93; 
+                        Configuração_Eletrônica_=_[Xe]_6s²_4f^11;" >
+          <a href="#" class='clickEle' id_elemento='67'>
+                  <span><img src="./imagens/67.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >67</strong>
+              <b><acronym>Ho</acronym></b>
+              <em>Hólmio</em>
+              <i>164,93</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Erbio:
+                    Símbolo_=_Er; 
+                    Nº_Atômico_=_68; 
+                    Massa_Atômica_=_167.26; 
+                    Configuração_Eletrônica_=_[Xe]_6s²_4f^12;" >
+          <a href="#" class='clickEle' id_elemento='68'>
+                  <span><img src="./imagens/68.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >68</strong>
+              <b><acronym>Er</acronym></b>
+              <em>Erbio</em>
+              <i>167,26</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Túlio:
+                      Símbolo_=_Tm; 
+                      Nº_Atômico_=_69; 
+                      Massa_Atômica_=_168.93; 
+                      Configuração_Eletrônica_=_[Xe]_6s²_4f^13;" >
+          <a href="#"class='clickEle' id_elemento='69' >
+                  <span><img src="./imagens/69.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >69</strong>
+              <b><acronym>Tm</acronym></b>
+              <em>Túlio</em>
+              <i>168,93</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Itérbio:
+                        Símbolo_=_Yb; 
+                        Nº_Atômico_=_70; 
+                        Massa_Atômica_=_173.05; 
+                        Configuração_Eletrônica_=_[Xe]_6s²_4f^14;" >
+          <a href="#" class='clickEle' id_elemento='70'>
+                  <span><img src="./imagens/70.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >70</strong>
+              <b><acronym>Yb</acronym></b>
+              <em>Itérbio</em>
+              <i>173,05</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Lutécio:
+                        Símbolo_=_Lu; 
+                        Nº_Atômico_=_71; 
+                        Massa_Atômica_=_174.97; 
+                        onfiguração_Eletrônica_=_[Xe]_6s²_4f^14_5d¹;" >
+          <a href="#" class='clickEle' id_elemento='71'>
+                  <span><img src="./imagens/71.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >71</strong>
+              <b><acronym>Lu</acronym></b>
+              <em>Lutécio</em>
+              <i>174,97</i>
+            </big></b>
+          </a>
+        </td>
+      </tr>
+      <tr id="rodape2">
+        <td class="scrc" info="Actínio:
+                    Símbolo_=_Ac; 
+                    Nº_Atômico_=_89; 
+                    Massa_Atômica_=_227; 
+                    Configuração_Eletrônica_=_[Rn]_7s²_6d¹;" >
+          <a href="#" class='clickEle' id_elemento='89'>
+                  <span><img src="./imagens/89.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >89</strong>
+              <b><acronym>Ac</acronym></b>
+              <em>Actínio</em>
+              <i>294</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Tório:
+                    Símbolo_=_Th; 
+                    Nº_Atômico_=_90; 
+                    Massa_Atômica_=_232.04; 
+                    Configuração_Eletrônica_=_[Rn]_7s²_6d²;" >
+          <a href="#" class='clickEle' id_elemento='90'>
+                  <span><img src="./imagens/90.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >90</strong>
+              <b><acronym>Th</acronym></b>
+              <em>Tório</em>
+              <i>232,04</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Protactínio:
+                      Símbolo_=_Pa; 
+                      Nº_Atômico_=_91; 
+                      Massa_Atômica_=_231.04; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f²_6d¹;" >
+          <a href="#" class='clickEle' id_elemento='91'>
+                  <span><img src="./imagens/91.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >91</strong>
+              <b><acronym>Pa</acronym></b>
+              <em>Protactínio</em>
+              <i>231,04</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Urãnio:
+                      Símbolo_=_U;
+                      Nº_Atômico_=_92; 
+                      Massa_Atômica_=_238.03; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f³_6d¹;" >
+          <a href="#" class='clickEle' id_elemento='92'>
+                  <span><img src="./imagens/92.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >92</strong>
+              <b><acronym>U</acronym></b>
+              <em>Urãnio</em>
+              <i>238,03</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Neptúnio:
+                      Símbolo_=_Np; 
+                      Nº_Atômico_=_93; 
+                      Massa_Atômica_=_237; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^4_6d¹;" >
+          <a href="#" class='clickEle' id_elemento='93'>
+                  <span><img src="./imagens/93.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >93</strong>
+              <b><acronym class="colordesc">Np</acronym></b>
+              <em>Neptúnio</em>
+              <i>237</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Plutônio:
+                        Símbolo_=_Pu; 
+                        Nº_Atômico_=_94; 
+                        Massa_Atômica_=_244; 
+                        Configuração_Eletrônica_=_[Rn]_7s²_5f^6;" >
+          <a href="#" class='clickEle' id_elemento='94'>
+                  <span><img src="./imagens/94.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >94</strong>
+              <b><acronym class="colordesc">Pu</acronym></b>
+              <em>Plutônio</em>
+              <i>244</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Américo:
+                    Símbolo_=_Am; 
+                    Nº_Atômico_=_95; 
+                    Massa_Atômica_=_243; 
+                    Configuração_Eletrônica_=_[Rn]_7s²_5f^7;" >
+          <a href="#" class='clickEle' id_elemento='95'>
+                  <span><img src="./imagens/95.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >95</strong>
+              <b><acronym class="colordesc">Am</acronym></b>
+              <em>Américo</em>
+              <i>243</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Cúrio:
+                        Símbolo_=_Cm; 
+                        Nº_Atômico_=_96; 
+                        Massa_Atômica_= 247; 
+                        Configuração_Eletrônica_=_[Rn]_7s²_5f^7_6d¹;" >
+          <a href="#" class='clickEle' id_elemento='96'>
+                  <span><img src="./imagens/96.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >96</strong>
+              <b><acronym class="colordesc">Cm</acronym></b>
+              <em>Cúrio</em>
+              <i>247</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Berquélio:
+                      Símbolo_=_Bk; 
+                      Nº_Atômico_=_97; 
+                      Massa_Atômica_=_247; 
+                      Configuração_Eletrônica_=_[Rn]_7s²_5f^9;" >
+          <a href="#" class='clickEle' id_elemento='97'>
+                  <span><img src="./imagens/97.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >97</strong>
+              <b><acronym class="colordesc">Bk</acronym></b>
+              <em>Berquélio</em>
+              <i>247</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Califórnio:
+                    Símbolo_=_Cf; 
+                    Nº_Atômico_=_98;
+                    Massa_Atômica_=_251;
+                    Configuração_Eletrônica_=_[Rn]_7s²_5f^10;" >
+          <a href="#" class='clickEle' id_elemento='98'>
+                  <span><img src="./imagens/98.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >98</strong>
+              <b><acronym class="colordesc">Cf</acronym></b>
+              <em>Califórnio</em>
+              <i>251</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Einstênio:
+                          Símbolo_=_Es; 
+                          Nº_Atômico_=_99; 
+                          Massa_Atômica_=_252; 
+                          Configuração_Eletrônica_=_[Rn]_7s²_5f^11;">
+          <a href="#" class='clickEle' id_elemento='99'>
+                  <span><img src="./imagens/99.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >99</strong>
+              <b><acronym class="colordesc">Es</acronym></b>
+              <em>Einstênio</em>
+              <i>252</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Férmio:
+                    Símbolo_=_Fm; 
+                    Nº_Atômico_=_100; 
+                    Massa_Atômica_=_257; 
+                    Configuração_Eletrônica_=_[Rn]_7s²_5f^12" >
+          <a href="#" class='clickEle' id_elemento='100'>
+            <span><img src="./imagens/100.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >100</strong>
+              <b><acronym class="colordesc">Fm</acronym></b>
+              <em>Férmio</em>
+              <i>257</i>
+            </big></b>
+          </a  href="#">
+        </td>
+        <td class="scrc" info="Mendelévio:
+                    Símbolo_=_Md; 
+                    Nº_Atômico_=_101; 
+                    Massa_Atômica_=_258; 
+                    Configuração_Eletrônica_=_[Rn]_7s²_5f^13" >
+          <a href="#" class='clickEle' id_elemento='101'>
+            <span><img src="./imagens/101.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >101</strong>
+              <b><acronym class="colordesc">Md</acronym></b>
+              <em>Mendelévio</em>
+              <i>258</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Nobélio:
+                    Símbolo_=_No; 
+                    Nº_Atômico_=_102; 
+                    Massa_Atômica_=_259; 
+                    Configuração_Eletrônica_=_[Rn]_7s²_5f^14;">
+          <a href="#" class='clickEle' id_elemento='102'>
+            <span><img src="./imagens/102.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >102</strong>
+              <b><acronym class="colordesc">No</acronym></b>
+              <em>Nobélio</em>
+              <i>159</i>
+            </big></b>
+          </a>
+        </td>
+        <td class="scrc" info="Laurêncio:
+                    Símbolo_=_Lr; 
+                    Nº_Atômico_=_103; 
+                    Massa_Atômica_=_266; 
+                    Configuração_Eletrônica_=_[Rn]_7s²_5f^14_7p¹;" >
+          <a href="#" class='clickEle' id_elemento='103'>
+            <span><img src="./imagens/103.jpg" class='img1'></img></span>
+            <b><big>
+              <strong >103</strong>
+              <b><acronym class="colordesc">Lr</acronym></b>
+              <em>Laurêncio</em>
+              <i>266</i>
+            </big></b>
+          </a>
+        </td>
+        
+
+      </tr>
+    </table>
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div id='conteudoModal'>
+            
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modaltable" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <div id='conteudoM'>
+                    
+                  </div>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+  </center>
+    </div>
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Your Website 2018</span>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/datatables-demo.js"></script>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>teste</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/imagens.css" rel='stylesheet'>
+
+
+  </head>
+
+  <body id="page-top">
+
+    <script>
+    $(this).ready(
+        function(){
+          $(".clickPro").click(
+            function(){
+                sobrePro = $(this).attr('sobrePro');
+                console.log(sobrePro)
+            var request = $.ajax({
+              url: sobrePro + '.html'
+            });
+            request.done(function(data){
+              $('#conteudoModal').html(data)
+
+            });
+            request.fail(function(){
+              console.log("Erro ocorrido!");
+            });
+            $('#myModal').modal();
+            });
+        });
+
+  </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+      <a class="navbar-brand mr-1" href="index.html">TABELA</a>
+
+      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      </nav>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <ul class="sidebar navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>INÍCIO</b>
+          </a>
+        </li>
+         <li class="nav-item active">
+          <a class="nav-link" href="sobreTabela.html" >
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>HISTÓRIA</b>
+          </a>
+        </li>
+            <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>PROPRIEDADES PERIÓDICAS</b>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="quiz.html" >
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>QUIZ</b>
+          </a>
+        </li>
+      </ul>
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#" sobrePro="sobrePro" class="clickPro">Propriedades Periódicas</a>
+            </li>
+            <li class="breadcrumb-item active">Propriedades Periódicas</li>
+          </ol>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Raio atômico</li>
+          </ol>
+        &emsp; O <b>raio atômico</b>, assim como todas as propriedades periódicas, varia de acordo com a posição do elemento na tabela periódica, podendo diminuir genericamente ou aumentar ao longo de períodos em seu grupo.<br/><br/>
+       &emsp; O Raio atômico é a medida da distancia entre o centro de um átomo até a camada externa de outro átomo, onde geralmente calcula-se entre a distância do centro um átomo até o centro de outro átomo semelhante, concluindo que o raio é a metade dessa distância (2r). Importante lembrar que estamos considerando átomos de mesma proporção, em caso de não coesão nos tamanhos dos átomos, para determinar o raio de um, basta apenas ter o conhecimento do raio do outro.<br/><br/>
+        &emsp;O tamanho dos raios atômicos dos elementos varia de acordo com seus grupos, onde a medida em que descemos os grupos, o número de camadas eletrônicas aumentam, os elétrons de valência encontra-se na camada exterior do átomo e a carga nuclear efetiva é menos, tendo maior blindagem, conclui-se que é por isso que o raio atômico é maior.<br/><br/>
+
+      <center><b>Figura 1</b> – Distância internuclear<br/><img src="./imagenspropriedades/raio.png" style="width: 30%;"><br/>
+        <div style="font-size: 12px;">Fonte: Ferreira Fernandes (2013)</div></center><br/>
+<b></b> 
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Energia de Ionização</li>
+        </ol>
+        &emsp;A <b> Potencial de ionização ou energia de ionização</b> é a quantidade de energia necessária para retirar elétrons de um átomo. Para retirar os elétrons mais externos de um átomo, é necessária uma quantidade de energia suficiente para realizar isso, energia chamada de energia de ionização. <br/><br/>
+        &emsp;O potencial de ionização é medido pela unidade em elétron-volt (eV). Essa energia cresce em duas direções na tabela periódica: de baixo para cima, onde o raio atômico diminui e os elétrons ficando mais próximos do núcleo, aumentando a força de atração entre eles; da esquerda pra direita, onde a carga do núcleo aumenta e o raio atômico diminui.<br/><br/>
+
+        <center><b>Figura 2 </b>– Potencial de ionização<br/><img src="./imagenspropriedades/energia.png" style="width: 50%;"><br/>
+        <div style="font-size: 12px;">Fonte: Hugo (2019)</div></center><br/>
+       
+         <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Afinidade eletrônica</li>
+        </ol>
+       &emsp;A <b>afinidade eletrônica ou eletro-afinidade</b> é a capacidade de um átomo que apesar de ter todos os seus elétrons, tem a capacidade de receber elétrons extras com facilidade. Em outras palavras, é a forma de como um átomo receber um ou mais elétrons extras, onde ao receber esses elétrons, se transformam-se em íons negativos(ânions) estáveis. Lembrando que isso acontece geralmente só com átomos isolados, adicionando ao estado gasoso.<br/><br/>
+       O valor da afinidade eletrônica de um átomo é, em sua maioria, negativo. Quanto mais negativo sua afinidade, maior será a capacidade do átomo receber cada vez mais elétrons extras.<br/><br/>
+        &emsp;A variação da afinidade eletrônica tende a ser contraria a variação do raio atômico<br/><br/>
+        <center><b>Figura 3</b>– Eletroafinidade <br/><img src="./imagenspropriedades/eletroa.png" style="width: 50%;"><br/>
+        <div style="font-size: 12px;">Fonte: Hugo (2019)</div></center><br/>
+
+
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Eletronegatividade</li>
+        </ol>
+       &emsp; A <b>Eletronegatividade</b> é a capacidade de um átomo atrair os elétrons de outro átomo, quando os átomos se formam uma ligação química. Quando um átomo está isolado, ele possui um grande potencial de ionização e uma grande afinidade, logo ele terá grande atração por elétrons, ou seja, terá uma alta eletronegatividade.<br/><br/>
+        A eletronegatividade depende de dois fatores: O tamanho do átomo e do Número e elétrons na ultima camada. De acordo com o primeiro fator, quanto menor é o átomo, maior será sua capacidade de atração dos elétrons, por causa do núcleo que é menor. No segundo fator, os átomos possuem elétrons na ultima camada, exercendo uma maior atração entre os elétrons e os átomos ligados.<br/><br/>
+        &emsp;Exemplificando isso, tem o elemento cloro que tem sete elétrons na sua ultima camada e o Oxigênio que tem seis. O átomo de oxigênio se torna menor do que o do cloro, concluindo que oxigênio é mais eletronegativo que o cloro.<br/><br/>
+       &emsp; Quanto menor o átomo e maior o número de elétrons na ultima camada, maior é sua eletronegatividade.<br/><br/>
+        O calculo de eletronegatividade em um átomo é através de duas formulas:<br/>
+      1)  Para elementos do grupo II: Eletronegatividade = (n° de elétrons – 1) /2<br/>
+      2)  Para elementos do grupo III: Eletronegatividade = (n° de elétrons – 8) /3
+      <br/><br/>
+      <center><b>Figura 4</b>– Eletronegatividade<br/><img src="./imagenspropriedades/eletron.png" style="width: 50%;"><br/>
+        <div style="font-size: 12px;">Fonte: Hugo (2019)</div></center><br/>
+
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Eletropositividade</li>
+        </ol>
+       &emsp;A eletropositividade é a capacidade que um elemento químico possui de perder elétrons. Quanto maior o raio atômico, ou seja, quanto maior o número atômico, mais camadas eletrônicas ele possui, logo, as cargas negativas (elétrons) ficam mais distantes do núcleo podendo ser perdidas com mais facilidade do que as cargas mais perto do núcleo (tendo uma falta de atração), onde a interação entre as cargas é maior. Logo, elementos mais à esquerda da tabela periódica é mais eletropositiva, pois eles apresentam um número atômico maior como: rubídio, césio, Frâncio.<br/><br/>
+      &emsp;A eletropositividade também é conhecida como caráter metálico, caracterizar toda o grupo de metais como mais eletropositivos do que os outros grupos.<br/><br/>
+      <center><b>Figura 5</b>– Eletropositividade<br/><img src="./imagenspropriedades/eletrop.jpg" style="width: 50%;"><br/>
+        <div style="font-size: 12px;">Fonte: Lira (2014).</div></center><br/>
+
+
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">REFERÊNCIAS BIBLIOGRÁFICAS</li>
+        </ol>
+        FERREIRA FERNANDES, R. Raio atômico. Revista de ciência elementar. v. 1, n.1, 2013.<br/><br/>
+        Hugo. Potencial de ionização. 2019. Disponível em: <a href = "http://coral.ufsm.br/quimica_organica/images/tabelapiae.pdf" target="_blank">
+        < http://coral.ufsm.br/quimica_organica/images/tabelapiae.pdf><a/> Acesso em: 21/11/2019.<br/><br/>
+
+        LIRA, J. C. L. Eletronegatividade e eletropositividade. 2014. Disponível em: <a href="https://www.infoescola.com/quimica/eletronegatividade-e-eletropositividade/" target="_blank">< https://www.infoescola.com/quimica/eletronegatividade-e-eletropositividade/</a>>. Acesso em 20/11/2019.
+
+        </div>
+         <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <div id='conteudoModal'>
+                    
+                  </div>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+        </div>
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Your Website 2018</span>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+  
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/datatables-demo.js"></script>
+
+  </body>
+
+</html>

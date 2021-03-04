@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>teste</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/imagens.css" rel='stylesheet'>
+  </head>
+
+  <body id="page-top">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script >
+    $(this).ready(
+        function(){
+          $(".clickQuiz").click(
+            function(){
+              //strong = document.getElementByClassName('ad').innerHTML
+                sobreQuiz = $(this).attr('sobreQuiz');
+                console.log(sobreQuiz)
+                //var strong =$(this).attr('ac')
+            var request = $.ajax({
+              url: sobreQuiz + '.html'
+            });
+            request.done(function(data){
+              $('#conteudoModal').html(data)
+
+            });
+            request.fail(function(){
+              console.log("Erro ocorrido!");
+            });
+            $('#myModal').modal();
+            });
+        });
+
+  </script>
+  
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+      <a class="navbar-brand mr-1" href="index.html">TABELA</a>
+
+      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      </nav>
+
+    <div id="wrapper">
+      <span id='topo'></span>
+
+      <!-- Sidebar -->
+      <ul class="sidebar navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>INÍCIO</b>
+          </a>
+        </li>
+         <li class="nav-item active">
+          <a class="nav-link" href="sobreTabela.html" >
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>HISTÓRIA</b>
+          </a>
+        </li>
+            <li class="nav-item active">
+          <a class="nav-link" href="404.html" >
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>PROPRIEDADES PERIÓDICAS</b>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#" >
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <b>QUIZ</b>
+          </a>
+        </li>
+      </ul>
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#"  sobreQuiz = "sobreQuiz" class="clickQuiz">Bem vindo ao Quiz</a>
+            </li>
+            <li class="breadcrumb-item active">Bem vindo ao Quiz</li>
+          </ol>
+
+          <!--DEFINE AS FONTES USADA NAS PERGUNTAS E RESPOSTAS-->
+
+<script language="JavaScript"> 
+var pontos=0; 
+function reponse(form) { 
+for (var i=0;i<form.length;i++){ 
+ if (form[i].checked){ 
+  break 
+ } 
+} 
+var answer="" ;
+if (i<form.length){ 
+ answer = form[i].value 
+} 
+return answer; 
+} 
+
+function solution(form) { 
+/* variável para cada pergunta */
+var points=0;var rep="";var comment="";var resposta1="";var resposta2="";var resposta3="";var resposta4="";
+var resposta5="";var resposta6="";var resposta7="";var resposta8="";var resposta9="";var resposta10="";var onome=""
+
+/* valor de pontos para as questões */
+if (reponse(form.question1)=="A") {pontos+=1} 
+if (reponse(form.question2)=="B") {pontos+=1} 
+if (reponse(form.question3)=="B") {pontos+=1} 
+if (reponse(form.question4)=="C") {pontos+=1} 
+if (reponse(form.question5)=="D") {pontos+=1} 
+if (reponse(form.question6)=="E") {pontos+=1} 
+if (reponse(form.question7)=="E") {pontos+=1} 
+if (reponse(form.question8)=="A") {pontos+=1} 
+if (reponse(form.question9)=="C") {pontos+=1}
+if (reponse(form.question10)=="B") {pontos+=1}   
+/* cada mensagem vai de acordo com o input marcado para resposta */
+//pizza(pontos);
+//Q1
+if (reponse(form.question1)=="") {resposta1="<b><font color=gray>não respondeu!</font></b>"}  
+if (reponse(form.question1)=="A") {resposta1="<b><font color=green>correta</font></b>"}
+if (reponse(form.question1)=="B") {resposta1="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>A</font></b>"}
+if (reponse(form.question1)=="C") {resposta1="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>A</font></b>"}
+if (reponse(form.question1)=="D") {resposta1="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>A</font></b>"}
+if (reponse(form.question1)=="E") {resposta1="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>A</font></b>"}
+
+//Q2
+if (reponse(form.question2)=="") {resposta2="<b><font color=gray>não respondeu!</font></b>"} 
+if (reponse(form.question2)=="A") {resposta2="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"} 
+if (reponse(form.question2)=="B") {resposta2="<b><font color=green>correta</font></b>"}
+if (reponse(form.question2)=="C") {resposta2="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"}
+if (reponse(form.question2)=="D") {resposta2="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"}
+if (reponse(form.question2)=="E") {resposta2="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"}
+//Q3
+if (reponse(form.question3)=="") {resposta3="<b><font color=gray>não respondeu!</font></b>"} 
+if (reponse(form.question3)=="A") {resposta3="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"} 
+if (reponse(form.question3)=="B") {resposta3="<b><font color=green>correta</font></b>"}
+if (reponse(form.question3)=="C") {resposta3="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"}
+if (reponse(form.question3)=="D") {resposta3="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"}
+if (reponse(form.question3)=="E") {resposta3="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"}
+
+//Q4
+if (reponse(form.question4)=="") {resposta4="<b><font color=gray>não respondeu!</font></b>"} 
+if (reponse(form.question4)=="A") {resposta4="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>C</font></b>"} 
+if (reponse(form.question4)=="B"){resposta4="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>C</font></b>"}
+if (reponse(form.question4)=="C") {resposta4="<b><font color=green>correta</font></b>"}
+if (reponse(form.question4)=="D"){resposta4="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>C</font></b>"}
+if (reponse(form.question4)=="E"){resposta4="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>C</font></b>"}
+  //Q5
+if (reponse(form.question5)=="") {resposta5="<b><font color=gray>não respondeu!</font></b>"} 
+if (reponse(form.question5)=="A") {resposta5="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>D</font></b>"} 
+if (reponse(form.question5)=="B"){resposta5="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>D</font></b>"}
+if (reponse(form.question5)=="C"){resposta5="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>D</font></b>"}
+if (reponse(form.question5)=="D"){resposta5="<b><font color=green>correta</font></b>"}
+if (reponse(form.question5)=="E"){resposta5="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>D</font></b>"}
+/* aqui é exibido a mensagem de acordo com o ponto marcado */
+//Q6
+if (reponse(form.question6)=="") {resposta6="<b><font color=gray>não respondeu!</font></b>"} 
+if (reponse(form.question6)=="A") {resposta6="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>E</font></b>"} 
+if (reponse(form.question6)=="B"){resposta6="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>E</font></b>"}
+if (reponse(form.question6)=="C") {resposta6="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>E</font></b>"}
+if (reponse(form.question6)=="D"){resposta6="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>E</font></b>"}
+if (reponse(form.question6)=="E"){resposta6="<b><font color=green>correta</font></b>"}
+//Q7
+if (reponse(form.question7)=="") {resposta7="<b><font color=gray>não respondeu!</font></b>"} 
+if (reponse(form.question7)=="A"){resposta7="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>E</font></b>"} 
+if (reponse(form.question7)=="B"){resposta7="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>E</font></b>"}
+if (reponse(form.question7)=="C"){resposta7="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>E</font></b>"}
+if (reponse(form.question7)=="D"){resposta7="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>E</font></b>"}
+if (reponse(form.question7)=="E") {resposta7="<b><font color=green>correta</font></b>"}
+  //Q8
+if (reponse(form.question8)=="") {resposta8="<b><font color=gray>não respondeu!</font></b>"} 
+if (reponse(form.question8)=="A") {resposta8="<b><font color=green>correta</font></b>"} 
+if (reponse(form.question8)=="B"){resposta8="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>A</font></b>"}
+if (reponse(form.question8)=="C") {resposta8="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>A</font></b>"}
+if (reponse(form.question8)=="D"){resposta8="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>A</font></b>"}
+if (reponse(form.question8)=="E"){resposta8="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>A</font></b>"}
+  //Q9
+if (reponse(form.question9)==""){resposta9="<b><font color=gray>não respondeu!</font></b>"} 
+if (reponse(form.question9)=="A"){resposta9="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>C</font></b>"} 
+if (reponse(form.question9)=="B"){resposta9="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>C</font></b>"}
+if (reponse(form.question9)=="C"){resposta9="<b><font color=green>correta</font></b>"}
+if (reponse(form.question9)=="D"){resposta9="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>C</font></b>"}
+if (reponse(form.question9)=="E"){resposta9="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>C</font></b>"}
+  //Q10
+if (reponse(form.question10)=="") {resposta10="<b><font color=gray>não respondeu!</font></b>"} 
+if (reponse(form.question10)=="A") {resposta10="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"} 
+if (reponse(form.question10)=="B") {resposta10="<b><font color=green>correta</font></b>"}
+if (reponse(form.question10)=="C") {resposta10="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"}
+if (reponse(form.question10)=="D") {resposta10="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"}
+if (reponse(form.question10)=="E") {resposta10="<b><font color=red>incorreta</font><br>Resposta correta: <font color=green>B</font></b>"}
+
+/* aqui exibo a porcentagem de acordo com o ponto  */
+if (pontos==0) {porcentagem=((0/10)*100)+"%"}
+if (pontos==1) {porcentagem=((1/10)*100)+"%"}
+if (pontos==2) {porcentagem=((2/10)*100)+"%"}
+if (pontos==3) {porcentagem=((3/10)*100)+"%"}
+if (pontos==4) {porcentagem=((4/10)*100)+"%"}
+if (pontos==5) {porcentagem=((5/10)*100)+"%"}
+if (pontos==6) {porcentagem=((6/10)*100)+"%"}
+if (pontos==7) {porcentagem=((7/10)*100)+"%"}
+if (pontos==8) {porcentagem=((8/10)*100)+"%"}
+if (pontos==9) {porcentagem=((9/10)*100)+"%"}
+if (pontos==10) {porcentagem=((10/10)*100)+"%"}
+
+  document.getElementById("acertos").value = (pontos)+"/10";
+  document.getElementById("porce").value = porcentagem +" das questoes";
+alert("Olá  "+formmail.onome.value+"!\nVoce acertou"+": "+(pontos)+" Questões");
+
+document.getElementById('resp1').innerHTML = "<b>Situação:</b> "+resposta1;
+document.getElementById('resp2').innerHTML = "<b>Situação:</b> "+resposta2
+document.getElementById('resp3').innerHTML = "<b>Situação:</b> "+resposta3;
+document.getElementById('resp4').innerHTML = "<b>Situação:</b> "+resposta4;
+document.getElementById('resp5').innerHTML = "<b>Situação:</b> "+resposta5;
+document.getElementById('resp6').innerHTML = "<b>Situação:</b> "+resposta6;
+document.getElementById('resp7').innerHTML = "<b>Situação:</b> "+resposta7;
+document.getElementById('resp8').innerHTML = "<b>Situação:</b> "+resposta8;
+document.getElementById('resp9').innerHTML = "<b>Situação:</b> "+resposta9;
+document.getElementById('resp10').innerHTML = "<b>Situação:</b> "+resposta10;
+
+}
+</script> 
+<script type="text/javascript">
+   $(document).ready(function(){
+  $("#jj").click(function (){
+        $("#jj").prop("disabled", true);
+         $("#nom").prop("disabled", true);
+    });
+  });
+</script>
+<title>Questionário</title> 
+<script>
+function vai() {
+window.location.reload();
+}
+</script>
+
+<!--ABAIXO SEGUE O FORMULÁRIO-->
+<form name=formmail>
+<br>
+<div> 
+<table>
+<tr><td> 
+Digite seu Nome:  <input type="text" name="onome" id="nom" class="form-control" value="" size="30" /><br/>
+<div class="form-row">
+    <div class="col">
+      Acertos : <input type="text" disabled="true" class="form-control" size="15" id="acertos"/>
+    </div>
+    <div class="col">
+      Porcentagem: <input type="text" class="form-control" id="porce" disabled="true"/>
+    </div>
+  </div><br/>
+  <ol class="breadcrumb" style="width: 30%%">
+            <li class="breadcrumb-item">
+              <b>Q1</b> - (UFPA) Um átomo, cujo número atômico é 18, está classificado na Tabela Periódica como:<br>
+              <!-- <button id="rq1" type="button">Ver Dica</button> -->
+            </li>
+           
+          </ol> 
+(A) <input TYPE="radio" NAME="question1" id="co" VALUE="A"> <b id="re1">gás nobre </b><br>
+(B) <input TYPE="radio" NAME="question1" VALUE="B"> <b>metal alcalino</b><br>
+(C) <input TYPE="radio" NAME="question1" VALUE="C"> <b>metal alcalinoterroso</b><br>
+(D) <input TYPE="radio" NAME="question1" VALUE="D"> <b>metal terroso </b> <br>
+(E) <input TYPE="radio" NAME="question1" VALUE="E"> <b>ametal </b><br>
+<br> 
+<p id="resp1"></p>
+<ol class="breadcrumb" style="width: 30%%">
+            <li class="breadcrumb-item">
+             <b>Q2</b> - (UFAL) Para um elemento químico representativo (grupos 1,2,13,14,15,16,17,18), o número de elétrons na camada de valência é o número do grupo. O número de camadas eletrônicas é o número do período. O elemento químico com configuração eletrônica 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p3 está situado na tabela periódica no grupo: 
+            </li>
+           
+          </ol>
+ (A) <input TYPE="radio" NAME="question2" VALUE="A">  <b> 3A e período 4.</b><br>
+ (B) <input TYPE="radio" NAME="question2" VALUE="B">  <b id="re2">5A e período 4.</b> <br>
+ (C) <input TYPE="radio" NAME="question2" VALUE="C">  <b>3B e período 3.</b> <br>
+ (D) <input TYPE="radio" NAME="question2" VALUE="D">  <b>5B e período 5.</b><br>
+ (E) <input TYPE="radio" NAME="question2" VALUE="E">  <b>4A e período 4.</b><br>
+<br> 
+<p id="resp2"></p>
+<ol class="breadcrumb" style="width: 30%%">
+            <li class="breadcrumb-item">
+              <b>Q3</b> - (Unimep-SP) Nos metais de transição interna, o elétron de diferenciação (o mais energético) se localiza no: 
+            </li>
+           
+          </ol> 
+(A) <input TYPE="radio" NAME="question3" VALUE="A">  <b>subnível “s”, da última camada.</b><br>
+(B) <input TYPE="radio" NAME="question3" VALUE="B">  <b id="re3">subnível “f”, da antepenúltima camada.</b><br>
+(C) <input TYPE="radio" NAME="question3" VALUE="C">  <b>subnível “d”, da antepenúltima camadas.</b><br>
+(D) <input TYPE="radio" NAME="question3" VALUE="D">  <b>subnível “p”, da penúltima camada.</b><br>
+(E) <input TYPE="radio" NAME="question3" VALUE="E">  <b>subnível “g”, da penúltima camada.</b><br>
+<br>
+<p id="resp3"></p>
+<ol class="breadcrumb" style="width: 30%%">
+            <li class="breadcrumb-item">
+              <b>Q4</b> - (Uel) Considere os itens a seguir. Na tabela periódica <br>
+              <b>I.</b> os elementos representativos são os das famílias indicadas com letras A (1A, 2A etc...). <br>
+              <b>II.</b> Na, Mg, Ca, Rb, Ba e Ra são os elementos alcalinos. <br>
+              <b>III.</b> F, O e Cl estão entre os elementos mais eletronegativos. <br>
+              Pode-se afirmar que, SOMENTE 
+            </li>
+           
+          </ol> 
+(A) <input TYPE="radio" NAME="question4" VALUE="A"> <b>I é correto.</b> <br>
+(B) <input TYPE="radio" NAME="question4" VALUE="B"> <b>II é correto.</b><br>
+(C) <input TYPE="radio" NAME="question4" VALUE="C"> <b id="re4">I e III são corretos.</b><br>
+(D) <input TYPE="radio" NAME="question4" VALUE="D"> <b>III é correto.</b><br>
+(E) <input TYPE="radio" NAME="question4" VALUE="E"> <b>I e II são corretos.</b> <br>
+<br>
+<p id="resp4"></p>
+<ol class="breadcrumb" style="width: 30%%">
+            <li class="breadcrumb-item">
+              <b>Q5</b> - (URCA/CE) Quando colocadas em ordem crescente, de subníveis energéticos, as seguintes configurações eletrônicas:<br>
+              <b>I.</b> 2p6 2s2 1s2 3p6 3s2 4s2<br>
+              <b>II.</b> 3p6 5s1 4s2 2p6 1s2 4p6 3d10 2s2 3s2<br>
+              <b>III.</b> 3s2 1s2 3d10 2p6 2s2 4p6 3p6 4s2<br>
+              <b>IV.</b> 3d10 2s2 4s2 2p6 1s2 4p5 3p6 3s2<br>
+              Elas representam, respectivamente:
+            </li>
+           
+          </ol> 
+(A) <input TYPE="radio" NAME="question5" VALUE="A"> <b>alcalino-terroso, alcalino, calcogênio e halogênio.</b><br>
+(B) <input TYPE="radio" NAME="question5" VALUE="B"> <b>halogênio, calcogênio, alcalino e gás nobre.</b><br>
+(C) <input TYPE="radio" NAME="question5" VALUE="C"> <b>gás nobre, alcalino-terroso, halogênio e calcogêni</b><br>
+(D) <input TYPE="radio" NAME="question5" VALUE="D"> <b id="re5">alcalino-terroso, alcalino, gás nobre e halogênio.</b><br>
+(E) <input TYPE="radio" NAME="question5" VALUE="E"> <b>alcalino-terroso, halogênio, calcogênio e gás nobre.</b><br>
+<br>
+<p id="resp5"></p>
+<ol class="breadcrumb" style="width: 30%%">
+            <li class="breadcrumb-item">
+              <b>Q6</b> - (ERSHC) Assinale a alternativa que contém elementos que moram no quinto período da tabela periódica. 
+            </li>
+           
+          </ol> 
+(A) <input TYPE="radio" NAME="question6" VALUE="A"> <b>La, U, Ni, B.</b> <br>
+(B) <input TYPE="radio" NAME="question6" VALUE="B"> <b>Ag, Cd, In, O.</b> <br>
+(C) <input TYPE="radio" NAME="question6" VALUE="C"> <b>He, Ne, Mo, Na.</b> <br>
+(D) <input TYPE="radio" NAME="question6" VALUE="D"> <b>n. r. a.</b><br>
+(E) <input TYPE="radio" NAME="question6" VALUE="E"> <b id="re6">Xe, Tc, Zr, Ag.</b> <br>
+<br>
+<p id="resp6"></p>
+<ol class="breadcrumb" style="width: 30%%">
+            <li class="breadcrumb-item">
+              <b>Q7</b> - (UFAC) Os organismos vivos são constituídos de compostos de carbono. Isto acontece devido às propriedades deste elemento. Assim, um escritor de ficção científica pediu auxílio a um estudante do ensino médio para a escolha de um elemento químico capaz de substituir o carbono na formação de compostos. O estudante escolheu, com base em seus conhecimentos de tabela periódica, um elemento que tem quase o mesmo tamanho do carbono, eletronegatividade muito semelhante e mesma valência. O elemento escolhido, número atômico igual a 14, foi:
+            </li>
+           
+          </ol> 
+(A) <input TYPE="radio" NAME="question7" VALUE="A">  <b>Nitrogênio.</b><br>
+(B) <input TYPE="radio" NAME="question7" VALUE="B">  <b>Boro.</b><br>
+(C) <input TYPE="radio" NAME="question7" VALUE="C">  <b>Alumínio.</b><br>
+(D) <input TYPE="radio" NAME="question7" VALUE="D"> <b> Fósforo.</b><br>
+(E) <input TYPE="radio" NAME="question7" VALUE="E">  <b id="re7">Silício.</b><br>
+<br>
+<p id="resp7"></p>
+<ol class="breadcrumb" style="width: 30%%">
+            <li class="breadcrumb-item">
+            <b> Q8</b> - (ACAFE-SC) O aumento da população mundial, que ocorreu ao longo da história da humanidade, obrigou os agricultores a incrementarem a produção de alimentos. Para tanto, além de outros recursos, são adicionados milhões de toneladas de fertilizantes no solo, os quais apresentam na sua composição N, P e K. Assinale a alternativa que apresenta elementos que fazem parte da fórmula molecular dos principais fertilizantes.
+            </li>
+           
+          </ol> 
+(A) <input TYPE="radio" NAME="question8" VALUE="A">  <b id="re8">nitrogênio - fósforo - potássio.</b><br>
+(B) <input TYPE="radio" NAME="question8" VALUE="B">  <b>nitrogênio - água - argônio.</b><br>
+(C) <input TYPE="radio" NAME="question8" VALUE="C">  <b>nitrogênio - fósforo - mercúrio.</b><br>
+(D) <input TYPE="radio" NAME="question8" VALUE="D">  <b>fósforo - potássio - mercúrio.</b><br>
+(E) <input TYPE="radio" NAME="question8" VALUE="E">  <b>fósforo - potássio - mercúrio.</b><br>
+<br>
+<p id="resp8"></p>
+<ol class="breadcrumb" style="width: 30%%">
+            <li class="breadcrumb-item">
+              <b>Q9</b> - (ENEM 2018 - Dia 2) Na mitologia grega, Nióbia era a filha de Tãntalo, dois personagens conhecidos pelo sofrimento. O elemento químico de número atômico (Z) igual a 41 tem propriedades químicas e físicas tão parecidas com as do elemento de número atômico 73 que chegaram a ser confundidos. Por isso, em homenagem a esses dois personagens da mitologia grega, foi conferido a esses elementos os nomes de nióbio (Z = 41) e tãntalo (Z = 73). Esses dois elementos químicos adquiriram grande importância econômica na metalurgia, na produção de supercondutores e em outras aplicações na indústria de ponta, exatamente pelas propriedades químicas e físicas comuns aos dois.<br>
+              A importância econômica e tecnológica desses elementos, pela similaridade de suas propriedades químicas e físicas, deve-se a
+            </li>
+           
+          </ol> 
+(A) <input TYPE="radio" NAME="question9" VALUE="A">  <b>terem elétrons no subnível f.</b><br>
+(B) <input TYPE="radio" NAME="question9" VALUE="B">  <b>serem elementos de transição interna.</b><br>
+(C) <input TYPE="radio" NAME="question9" VALUE="C">  <b id="re9">pertencerem ao mesmo grupo na tabela periódica.</b><br>
+(D) <input TYPE="radio" NAME="question9" VALUE="D">  <b>terem seus elétrons mais externos nos níveis 4 e 5, respectivamente.</b><br>
+(E) <input TYPE="radio" NAME="question9" VALUE="E">  <b>estarem localizados na família dos alcalinos terrosos e alcalinos, respectivamente.</b><br>
+<br>
+<p id="resp9"></p>
+<ol class="breadcrumb" style="width: 30%%">
+            <li class="breadcrumb-item">
+              <b>Q10</b> - (ABC) Pertencem à família dos calcogênios:
+            </li>
+           
+          </ol> 
+(A) <input TYPE="radio" NAME="question10" VALUE="A"> <b>O cloro e o bromo.</b><br>
+(B) <input TYPE="radio" NAME="question10" VALUE="B"> <b id="re10">O selênio e o telúrio.</b><br>
+(C) <input TYPE="radio" NAME="question10" VALUE="C"> <b>O oxigênio e o nitrogênio.</b><br>
+(D) <input TYPE="radio" NAME="question10" VALUE="D"> <b>O sódio e o potássio.</b><br>
+(E) <input TYPE="radio" NAME="question10" VALUE="E"> <b>O cálcio e o bário.</b><br>
+<br>
+<p id="resp10"></p>
+<button class="btn btn-dark"  id="jj" onclick="solution(this.form)"><a href="#topo" style="color:white;">Ver resultado</a></button>
+</td></form></tr>
+</table> 
+<button  class="btn btn-dark" onclick="vai()">Tentar novamente</button>
+<style type="text/css">
+  .as:hover{
+    color: white;
+  }
+  .as:link 
+{ 
+text-decoration:none; 
+}
+</style>
+            
+          </div>
+        </footer>
+
+      </div>
+      
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div id='conteudoModal'>
+            
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Logout Modal-->
+    
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/datatables-demo.js"></script>
+
+  </body>
+
+</html>
